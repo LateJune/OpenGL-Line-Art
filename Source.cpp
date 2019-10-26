@@ -39,22 +39,30 @@ void display(void)
 		glVertex2f(radius * cos(angle), radius * sin(angle));
 
 		// Create another loop to interpolate lines
-		for (double k = 0; k <= numOfLines; k++)
+		for (double k = 0.0; k <= numOfLines; k++)
 		{
 			double kDividedNumOfLines = k / numOfLines;
 			double radTimesSin = radius * sin(angle);
 			double radTimesCos = radius * cos(angle);
-
+			
 			double radTimesSinPlusAngle = radius * sin(angle + incrementAngle);
 			double radTimesCosPlusAngle = radius * cos(angle + incrementAngle);
 
+			// Green Lines
+			// Derived from (1 - t) * a + t * b where a = x and b = y
 			glColor3f(0.0, 1.0, 0.5);
 			glVertex2f(kDividedNumOfLines * radTimesCos, kDividedNumOfLines * radTimesSin);
-
-			// Derived from (1 - t) * a + t * b where a = x and b = y
 			glVertex2f((1 - kDividedNumOfLines) * radTimesCos + kDividedNumOfLines * radTimesCosPlusAngle, (1 - kDividedNumOfLines) * radTimesSin + kDividedNumOfLines * radTimesSinPlusAngle);
-		}
+			
+
+			// Yellow lines
+			// TODO: Understand the rotation of polygon and correctly set it in line with rest of figure
+			glColor3f(1.0, 1.0, 0.0);
+			glVertex2f((1 - kDividedNumOfLines) * radTimesSin + kDividedNumOfLines * radTimesSinPlusAngle, (1 - kDividedNumOfLines) * radTimesCos + kDividedNumOfLines * radTimesCosPlusAngle);
+			glVertex2f(kDividedNumOfLines * radTimesSin, kDividedNumOfLines * radTimesCos);
+		}		
 	}
+
 	glEnd();
 	glFlush();
 }
@@ -63,7 +71,7 @@ int main(int argc, char** argv)
 {
 	glutInit(&argc, argv);
 	glutInitWindowSize(800, 800);
-	glutCreateWindow("Deadbeef");
+	glutCreateWindow("Line Art");
 	glutDisplayFunc(display);
 	glutMainLoop();
 	return 0;
