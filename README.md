@@ -16,7 +16,7 @@ Running the program with 10 sides and 50 lines produces the following output.
 
 Running the program with 6 side and 10 lines produces the following output.
 
-!
+![alt text](https://i.imgur.com/MufIyyC.png "Six sides, ten lines")
 
 ## Acknowledgements
 The OpenGL Utility Toolkit was originally written by Mark Kilgard
