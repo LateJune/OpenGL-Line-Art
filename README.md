@@ -8,13 +8,17 @@ After compliation give the program executable the number of sides and number of 
 
 **NOTE:** Be sure to place the OpenGL files `i.e. glut.h, glut32.lib, glut32.dll, glut.def` in the same directory as Source.cpp. These are necessary files for the compilation of the project. 
 
-Running the program with 10 sides and 50 lines produces the following output
+Running the program with 10 sides and 50 lines produces the following output.
 
-![Sample text](https://imgur.com/k1EyjUp)
+![alt text](https://i.imgur.com/k1EyjUp.png "Input parameters")
 
-![Sample text](https://imgur.com/7GLR5Mg)
+![alt text](https://i.imgur.com/7GLR5Mg.png "Demonstration of interpolation")
+
+Running the program with 6 side and 10 lines produces the following output.
+
+!
 
 ## Acknowledgements
 The OpenGL Utility Toolkit was originally written by Mark Kilgard
 
-Download the full glut source [Here](https://user.xmission.com/~nate/glut.html) 
+Download the full glut source [here](https://user.xmission.com/~nate/glut.html) 
